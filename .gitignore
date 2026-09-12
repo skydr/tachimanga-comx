@@ -4,6 +4,7 @@
 !index.pb
 !README.md
 !tachiyomi-ru.comx-*.apk
+!tachiyomi-ru.comx-*.jar
 !src/
 !src/**
 !.gitignore
