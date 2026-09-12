@@ -17,8 +17,8 @@ for image loading timeouts:
 ## How to add this repository in Tachimanga
 
 1. Browse → Settings (gear icon) → Extension Repositories → Add.
-2. Paste the repository URL:
-   `https://github.com/skydr/tachimanga-comx`
+2. Paste the repository URL (must end with `index.pb` or `index.min.json`):
+   `https://github.com/skydr/tachimanga-comx/raw/main/index.pb`
 3. Confirm the security prompt.
 4. Go back to Browse and install / update **Com-X**.
 
