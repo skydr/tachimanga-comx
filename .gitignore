@@ -1,0 +1,7 @@
+*
+!index.min.json
+!README.md
+!tachiyomi-ru.comx-*.apk
+!src/
+!src/**
+!.gitignore
