@@ -36,7 +36,7 @@ import org.jsoup.nodes.Element
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
-import kotlin.time.Duration.Companion.seconds
+import java.util.concurrent.TimeUnit
 
 @Source
 abstract class ComX :
@@ -46,10 +46,9 @@ abstract class ComX :
     private val preferences: SharedPreferences = getPreferences()
 
     override fun OkHttpClient.Builder.configureClient() = apply {
-        connectTimeout(30.seconds)
-        readTimeout(60.seconds)
+        connectTimeout(30, TimeUnit.SECONDS)
+        readTimeout(60, TimeUnit.SECONDS)
         addInterceptor(DleGuardResolver.interceptor(baseUrl))
-        addInterceptor(BackoffInterceptor())
         rateLimit(3) { it.host == baseUrl.toHttpUrl().host }
     }
 

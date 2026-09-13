@@ -27,7 +27,18 @@ object DleGuardResolver {
 
     fun interceptor(baseUrl: String): Interceptor = Interceptor { chain ->
         val originalRequest = chain.request()
-        val response = chain.proceed(originalRequest)
+        var response = chain.proceed(originalRequest)
+        var retry = 0
+        while ((response.code == 429 || response.code == 503) && retry < 2) {
+            retry++
+            val delayMs = (
+                response.header("Retry-After")?.toLongOrNull()?.coerceIn(1L, 30L)
+                    ?: if (retry == 1) 2L else 5L
+                ) * 1000
+            response.close()
+            Thread.sleep(delayMs)
+            response = chain.proceed(originalRequest)
+        }
         if (response.request.url.pathSegments.firstOrNull() != "_c") {
             return@Interceptor response
         }
