@@ -2,8 +2,7 @@
   "meta": {
     "name": "tachimanga-comx",
     "website": "https://github.com/skydr/tachimanga-comx",
-    "signingKeyFingerprint": "4f0a23d9f806aaaecbd533802146f5398eeba030d99f8435c07f5ffcce2bd342"
+    "signingKeyFingerprint": "68f2d3fee8bd2a4ca9f4a744347d831dd427f804c9d2eb21895a1a80662784d8"
   },
-  "index_v2": "https://github.com/skydr/tachimanga-comx/raw/repo/index.pb",
-  "signingKeyFingerprint": "68f2d3fee8bd2a4ca9f4a744347d831dd427f804c9d2eb21895a1a80662784d8"
+  "index_v2": "https://github.com/skydr/tachimanga-comx/raw/repo/index.pb"
 }
